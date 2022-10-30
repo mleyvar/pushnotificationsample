@@ -13,3 +13,6 @@ Generate the token and receive a title and message from the firebase cloud messa
 
 
 ![image](https://user-images.githubusercontent.com/24800779/198884938-b76f4750-4698-4059-a991-40b4cb0afe51.png)
+
+
+![image](https://user-images.githubusercontent.com/24800779/198885029-02b1d1da-0d84-45e6-a557-56c9de5e6e96.png)
