@@ -6,7 +6,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
-import android.provider.MediaStore
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -32,7 +31,7 @@ class FIreBaseManager : FirebaseMessagingService() {
         Log.e(TAG, "Title: " + p0!!.notification?.title)
         Log.e(TAG, "Tag: " + p0!!.notification?.tag)
         Log.e(TAG, "Body: " + p0.notification?.body!!)
-        Log.e(TAG, "image: " + p0.notification?.imageUrl)
+        // Log.e(TAG, "image: " + p0.notification?.imageUrl)
         sendNotification(p0)
     }
 
@@ -43,13 +42,13 @@ class FIreBaseManager : FirebaseMessagingService() {
         val ii = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, ii, 0)
 
-        val imageLarge = MediaStore.Images.Media.getBitmap(this.contentResolver, remoteMessage.notification?.imageUrl)
+        //  val imageLarge = MediaStore.Images.Media.getBitmap(this.contentResolver, remoteMessage.notification?.imageUrl)
 
         mBuilder.setContentIntent(pendingIntent)
         mBuilder.setSmallIcon(R.mipmap.sym_def_app_icon)
-        remoteMessage.notification?.imageUrl.apply {
-            mBuilder.setLargeIcon(imageLarge)
-        }
+//        remoteMessage.notification?.imageUrl.apply {
+//            mBuilder.setLargeIcon(imageLarge)
+//        }
         mBuilder.color = this.getColor(R.color.holo_purple)
         mBuilder.setContentTitle(remoteMessage.notification?.title)
         mBuilder.setContentText(remoteMessage.notification?.body)
